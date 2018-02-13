@@ -4,7 +4,9 @@
 
 int main(int, char**)
 {
-    Square square(1,2);
+    Square * square = Square::getInstance();
+
+    Square square(3,2);
 
     std::cout
         << square.getHeight() << "cm x "

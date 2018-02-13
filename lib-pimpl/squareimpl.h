@@ -5,6 +5,7 @@ class SquareImpl {
 
 private:
     int height, width;
+    int area;
 
 public:
     SquareImpl(const int height, const int width);

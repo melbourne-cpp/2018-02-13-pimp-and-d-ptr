@@ -6,11 +6,22 @@ class SquarePrivate {
 friend Square;
 
 private:
+    Square *q_ptr;
+
     int height, width;
+    int area;
 
 public:
-    SquarePrivate(const int height, const int width);
-    int getArea() const;
+    SquarePrivate(Square *q, const int height, const int width);
 };
+
+class ColoredSquarePrivate : public SquarePrivate
+{
+private:
+    Square *q_ptr;
+
+public:
+    SquarePrivate(ColoredSquare q, ...);
+}
 
 #endif

@@ -1,14 +1,15 @@
 #include "square.h"
 #include "squareprivate.h"
 
-Square::Square(const int height, const int width) : d_ptr(new SquarePrivate(height, width))
+Square::Square(const int height, const int width)
+: d_ptr(this, new SquarePrivate(height, width))
 {
 
 }
 
 int Square::getArea() const
 {
-    return d_ptr->getArea();
+    return d_ptr->area;
 }
 
 int Square::getHeight() const
@@ -21,12 +22,13 @@ int Square::getWidth() const
     return d_ptr->width;
 }
 
-SquarePrivate::SquarePrivate(const int height, const int width) : height(height), width(width)
+SquarePrivate::SquarePrivate(Square *q, const int height, const int width)
+: q_ptr(q), height(height), width(width)
 {
-    //area = height * width;
+    area = height * width;
 }
 
-int SquarePrivate::getArea() const
+SquarePrivate::foo()
 {
-    return height * width;
+    q_ptr->dosome();
 }

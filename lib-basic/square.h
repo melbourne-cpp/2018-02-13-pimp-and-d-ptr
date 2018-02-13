@@ -5,6 +5,7 @@ class Square {
 
 private:
     int height, width;
+    int area;
 
 public:
     Square(const int height, const int width);

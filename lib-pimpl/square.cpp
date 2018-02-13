@@ -23,12 +23,13 @@ int Square::getWidth() const
 
 SquareImpl::SquareImpl(const int height, const int width) : height(height), width(width)
 {
-
+    area = height * width;
 }
 
 int SquareImpl::getArea() const
 {
-    return height * width;
+    return area;
+    //return height * width;
 }
 
 int SquareImpl::getHeight() const
